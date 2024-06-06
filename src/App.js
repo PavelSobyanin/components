@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ContainerFunc from './components/ContainerFunc'; /* Компонент отвечает за задачу №1 и №2 */
+import item from './components/item'; /* Входные данные для задачи №1 и №2 */
+import Calendar from './components/Calendar'; /* Компонент для задачи №3 */
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+
+      {/* код для задачи №1 */}
+      <ContainerFunc item={item} />
+
+      {/* код для задачи №2*/}
+      <ContainerFunc item={item} type='Class'/>
+
+      {/* код для задачи №3*/}
+      <Calendar date={new Date()} />
+
+    </React.StrictMode>
   );
 }
 
